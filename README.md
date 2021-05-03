@@ -1,6 +1,11 @@
-# Getting Started with Create React App
+# React TSX starter APP
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Description
+
+I'm build this app when learning React with TypeScript
+It's simple ToDo app with Add and Delete functions
 
 ## Available Scripts
 

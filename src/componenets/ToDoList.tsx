@@ -1,4 +1,5 @@
 import React from 'react'
+import DeleteIcon from '@material-ui/icons/Delete';
 
 interface Props {
 	items: { id: number; value: string }[]
@@ -18,17 +19,19 @@ const ToDoList: React.FC<Props> = (props) => {
 						key={item.id}
 					>
 						<span className="item-text">{item.value}</span>
-						<button
+						<DeleteIcon
+							style={{ fontSize: 25 }}
+							className='todo-btn'
 							onClick={props.onDeleteTodo.bind(null, item.id)}
-						>
-							Delete
-						</button>
+						 />
 					</li>
 				))}
 			</ul>
 			{props.items.length > 0 ? (
-				<button onClick={props.onDeleteAll}>Delete ALL</button>
-			) : null}
+				<span
+				className='btn'
+				onClick={props.onDeleteAll}
+				>Delete ALL</span>) : null}
 		</div>
 	)
 }

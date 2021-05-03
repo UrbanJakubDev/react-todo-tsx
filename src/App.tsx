@@ -1,12 +1,8 @@
 import React, { useState } from 'react'
-import logo from './logo.svg'
 import './App.css'
 import ToDoList from './componenets/ToDoList'
 import NewTodo from './componenets/NewTodo'
 import { ToDo } from './todo.model'
-
-//Import axios
-const axios = require('axios').default
 
 // Function for generate random num
 const getRandomNum = () => {
@@ -15,44 +11,51 @@ const getRandomNum = () => {
 	return randValue
 }
 
+// React Function Component - APP
+// Main Componenet
 const App: React.FC = () => {
-	// TODO
+
+	// Object ToDo
 	const [todos, setTodos] = useState<ToDo[]>([])
 
-	// Add handler
+	// Add ToDo handler function
 	const todoAddHandler = (text: string) => {
-    if (text === ''){
-      alert('Empty string')
-      return
-    } else {
-      setTodos((prevTodos) => [
-        ...prevTodos,
-        { id: getRandomNum(), value: text },
-      ])
-
-    }
+		if (text === '') {
+			alert('Empty string')
+			return
+		} else {
+			setTodos((prevTodos) => [
+				...prevTodos,
+				{ id: getRandomNum(), value: text },
+			])
+		}
 	}
 
-	// Delete Handler
+	// Delete ToDo Handler fucntion
 	const todoDeleteHandler = (todoId: number) => {
 		setTodos((prevTodos) => {
 			return prevTodos.filter((todo) => todo.id !== todoId)
 		})
 	}
 
-  // Delete ALL hander
-  const todoDeleteAllHandler = () => {
-    setTodos([])
-  }
+	// Delete All ToDos Handler function
+	const todoDeleteAllHandler = () => {
+		setTodos([])
+	}
 
+
+	// Rendering
 	return (
 		<div className="App">
 			<header className="App-header">
 				<div className="content-container">
-					<h1>Todo</h1>
+					<h1>ToDo</h1>
 					<NewTodo onAddTodo={todoAddHandler} />
-					<ToDoList items={todos} onDeleteTodo={todoDeleteHandler} onDeleteAll={todoDeleteAllHandler} />
-  
+					<ToDoList
+						items={todos}
+						onDeleteTodo={todoDeleteHandler}
+						onDeleteAll={todoDeleteAllHandler}
+					/>
 				</div>
 			</header>
 		</div>

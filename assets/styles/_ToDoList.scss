@@ -1,0 +1,65 @@
+ul {
+    list-style: none;
+    padding: 0;
+}   
+
+.todo-list {
+	width: 100%;
+}
+
+.todo-item {
+	font-size: 2rem;
+	color: black;
+	padding: 10px;
+	margin: 10px 0;
+	text-align: left;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: blanchedalmond;
+	border: 1px solid black;
+	box-shadow: 6px 6px 10px #1b1e24;
+	border-radius: 0.3rem;
+}
+
+.item-text {
+	margin-right: 10px;
+}
+
+.todo-btn{
+	cursor: pointer;
+	font-size: 2rem;
+
+	&:hover{
+		color: rgb(165, 40, 102);
+	}
+}
+
+
+/* Animation */
+
+@keyframes fadeInUp {
+	0% {
+		transform: translate3d(0, 40px, 0);
+	}
+
+	100% {
+		transform: translate3d(0, 0, 0);
+		opacity: 1;
+	}
+}
+
+.animated {
+	animation-duration: 1s;
+	animation-fill-mode: both;
+}
+
+.animatedFadeInUp {
+	opacity: 0;
+}
+
+
+.fadeInUp {
+	opacity: 0;
+	animation-name: fadeInUp;
+}
