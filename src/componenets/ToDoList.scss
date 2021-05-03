@@ -1,0 +1,72 @@
+.todo-list{
+    width: 100%;
+}
+
+
+ul {
+	list-style: none;
+    padding: 0;
+}
+
+.todo-item {
+    font-size: 1.5rem;
+    color: black;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    background-color: blanchedalmond;
+    border: 1px solid black;
+    box-shadow: 6px 6px 10px #1b1e24;
+    ;
+}
+
+.item-text{
+    margin-right: 10px;
+}
+
+/* Animation */
+
+@keyframes fadeInUp {
+    from {
+        transform: translate3d(0,40px,0)
+    }
+
+    to {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+}
+
+@keyframes fadeOutDown {
+    from {
+        transform: translate3d(0,0,0);
+        opacity: 1
+    }
+
+    to {
+        
+        transform: translate3d(0,40px,0)
+    }
+}
+
+
+
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode:both;
+}
+
+.animatedFadeInUp {
+    opacity: 0
+}
+
+.animatedFadeOutDown {
+    opacity: 1
+}
+
+.fadeInUp {
+    opacity: 0;
+    animation-name: fadeInUp;
+}
