@@ -743,7 +743,13 @@ ul {
   border-radius: 0.3rem; }
 
 .item-text {
-  margin-right: 10px; }
+  width: 100%;
+  margin: 0 1rem;
+  text-align: left; }
+
+.todo-item-done {
+  color: grey;
+  text-decoration: line-through; }
 
 .todo-btn {
   cursor: pointer;
